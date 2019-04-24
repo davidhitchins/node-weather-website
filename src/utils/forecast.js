@@ -10,12 +10,13 @@ const forecast = (latitude, longitude, callback) => {
         } else if (body.error) {
             callback('Unable to find weather at that location, try another', undefined )    }
         else {              
-            callback(undefined, body.daily.data[0].summary + ' It is currently ' + body.currently.temperature + ' degrees out. There is a ' + body.currently.precipProbability + '% chance of rain')
+            callback(undefined, body.daily.data[0].summary + ' It is currently ' + body.currently.temperature + ' degrees out. There is a ' + body.currently.precipProbability + '% chance of rain' + ' The expected maximum temperature today will be ' + body.daily.data[0].apparentTemperatureHigh + ' degrees' + ' and the  expected minimum temperature today will be ' + body.daily.data[0].apparentTemperatureLow + ' degrees'
+            )
+
     }
 
     })
 }
-
 
 
 
